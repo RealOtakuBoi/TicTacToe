@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body{
+    background: #65a5f9;
+}
+
+.select-box{
+    position: absolute;
+    top: 50%;left: 50%;transform: translate(-50%,-50%);
+    background-color: aliceblue;
+    padding: 25px 30px 30px;
+    border-radius: 7px;
+    max-width:330px;
+    width: 100%;
+}
+
+.select-box header{
+    font-size: 24px;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+
+}
+
+.select-box .title{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.select-box .options{
+    display: flex;
+    width: 100%;
+}
+
+.options button{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 5px 5px;
+    color: white;
+    background-color: cornflowerblue;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.options button:hover{
+    transform: scale(0.95);
+}
+
