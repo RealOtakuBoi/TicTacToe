@@ -29,23 +29,32 @@ window.onload = () => {
 
 let Xicon = "fas fa-times",
 Oicon = "far fa-circle";
-playerSign = "X"
+
 function clickedBox(element){
     if(players.classList.contains("player")){
-        playerSign = "O";
         element.innerHTML = `<i class="${Oicon}"></i>`;
         players.classList.remove("active");
-        element.setAttribute("id", playerSign);
     }else{
         element.innerHTML = `<i class="${Xicon}"></i>`;
-        element.setAttribute("id", playerSign);
-        players.classList.add("active");
     }
 
     element.style.pointerEvents = "none";
+    bot();
 }
 
 
 
 
 
+function bot(){
+    let array = [];
+    for(let i = 0; i<boxes.length; i++){
+        if(boxes[i].childElementCount == 0){
+            array.push(i);
+        }
+    }
+
+    let randomBox = array[Math.floor(Math.random()*array.length)];
+    console.log(randomBox);
+
+}
