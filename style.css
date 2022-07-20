@@ -14,6 +14,7 @@ body{
 .select-box, .play-board, .result-box{
     position: absolute;
     top: 50%;left: 50%;transform: translate(-50%,-50%);
+    transition: 0.3s all ease;
 }
 
 .select-box{
@@ -22,7 +23,6 @@ body{
     border-radius: 7px;
     max-width:330px;
     width: 100%;
-    transition: all 0.3s ease;
     /* display: none; */
 }
 
@@ -74,7 +74,6 @@ body{
     opacity: 0;
     pointer-events: none;
     transform: translate(-50% , -50%) scale(0.9);
-    transition: 0.3s all ease;
 }
 
 .play-board.show{
