@@ -112,6 +112,7 @@ body{
     text-align: center;
     position: relative;
     z-index: 5;
+    transition: all 0.3s ease;
 }
 
 .details span:first-child{
@@ -122,6 +123,18 @@ body{
     color: whitesmoke;
 } */
 
+.players.active span:first-child{
+    color: #65a5f9;
+}
+
+.players.active span:nth-child(2){
+    color: aliceblue;
+}
+
+.players.active .slider{
+    left: 50%;
+}
+
 .details .slider{
     position: absolute;
     left: 0;
@@ -130,6 +143,7 @@ body{
     width: 50%;
     background-color:cornflowerblue;border-radius: 7px;
     z-index: 2;
+    transition: all 0.3s ease;
 }
 
 .play-board section span{
