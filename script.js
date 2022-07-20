@@ -36,10 +36,14 @@ function clickedBox(element){
         players.classList.remove("active");
     }else{
         element.innerHTML = `<i class="${Xicon}"></i>`;
+        players.classList.add("active");
     }
 
     element.style.pointerEvents = "none";
-    bot();
+    let delay = ((Math.random()*1000)+200).toFixed();
+    setTimeout(()=>{
+        bot();
+    },delay);
 }
 
 
@@ -55,6 +59,20 @@ function bot(){
     }
 
     let randomBox = array[Math.floor(Math.random()*array.length)];
-    console.log(randomBox);
+    
+    if(array.length > 0){
+        if(players.classList.contains("player")){
+            boxes[randomBox].innerHTML = `<i class="${Xicon}"></i>`;
+            players.classList.add("active");
+        }else{
+            boxes[randomBox].innerHTML = `<i class="${Oicon}"></i>`;
+            players.classList.remove("active");
+
+
+        }
+    
+    }
+
+    boxes[randomBox].style.pointerEvents = "none";
 
 }
