@@ -6,6 +6,7 @@ const selectOBtn = selectBox.querySelector(".playerO");
 const playBoard = document.querySelector(".play-board");
 const boxes = document.querySelectorAll("section span");
 const players = document.querySelector(".players");
+const resultBox = document.querySelector(".result-box");
 
 
 window.onload = () => {
@@ -31,7 +32,8 @@ window.onload = () => {
 
 let Xicon = "fas fa-times",
 Oicon = "far fa-circle",
-playerSign = 'X';
+playerSign = 'X',
+runBot = true;
 
 
 
@@ -53,7 +55,7 @@ function clickedBox(element){
     element.style.pointerEvents = "none";
     let delay = ((Math.random()*1000)+200).toFixed();
     setTimeout(()=>{
-        bot();
+        bot(runBot);
     },delay);
 }
 
@@ -61,8 +63,9 @@ function clickedBox(element){
 
 
 
-function bot(){
-    playerSign = "O";
+function bot(runBot){
+    if(runBot){
+        playerSign = "O";
     let array = [];
     for(let i = 0; i<boxes.length; i++){
         if(boxes[i].childElementCount == 0){
@@ -93,6 +96,8 @@ function bot(){
     boxes[randomBox].style.pointerEvents = "none";
     playerSign = "X";
 
+
+    }
 }
 
 
@@ -113,6 +118,7 @@ function checkIdSign(vali1, vali2, vali3, sign){
 
 function selectWinner(){
     if(checkIdSign(1,2,3,playerSign) || checkIdSign(4,5,6, playerSign) || checkIdSign(7,8,9, playerSign) || checkIdSign(1,4,7, playerSign) || checkIdSign(2,5,8, playerSign) || checkIdSign(3,6,9, playerSign) || checkIdSign(1,5,9, playerSign) || checkIdSign(3,5,7, playerSign)){
-        console.log(playerSign,"is winner");
+        runBot = false;
+        bot(runBot);
     }
 }
