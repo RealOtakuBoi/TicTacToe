@@ -139,3 +139,9 @@ function selectWinner() {
         }
     }
 }
+
+
+
+replayBtn.addEventListener("click", ()=>{
+    window.location.reload();
+})
