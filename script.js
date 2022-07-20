@@ -27,16 +27,24 @@ window.onload = () => {
     });
 };
 
+
+
 let Xicon = "fas fa-times",
-Oicon = "far fa-circle";
+Oicon = "far fa-circle",
+playerSign = 'X';
+
+
 
 function clickedBox(element){
     if(players.classList.contains("player")){
         element.innerHTML = `<i class="${Oicon}"></i>`;
+        playerSign = "O";
+        element.setAttribute("id", playerSign);
         players.classList.remove("active");
     }else{
         element.innerHTML = `<i class="${Xicon}"></i>`;
         players.classList.add("active");
+        element.setAttribute("id", playerSign);
     }
 
     element.style.pointerEvents = "none";
@@ -51,6 +59,7 @@ function clickedBox(element){
 
 
 function bot(){
+    playerSign = "O";
     let array = [];
     for(let i = 0; i<boxes.length; i++){
         if(boxes[i].childElementCount == 0){
@@ -64,9 +73,13 @@ function bot(){
         if(players.classList.contains("player")){
             boxes[randomBox].innerHTML = `<i class="${Xicon}"></i>`;
             players.classList.add("active");
+            playerSign = "X"
+            boxes[randomBox].setAttribute("id", playerSign);
+
         }else{
             boxes[randomBox].innerHTML = `<i class="${Oicon}"></i>`;
             players.classList.remove("active");
+            boxes[randomBox].setAttribute("id", playerSign);
 
 
         }
