@@ -29,6 +29,7 @@ window.onload = () => {
 
 let Xicon = "fas fa-times",
 Oicon = "far fa-circle";
+playerSign = "X"
 function clickedBox(element){
     if(players.classList.contains("player")){
         playerSign = "O";
@@ -39,4 +40,12 @@ function clickedBox(element){
         element.innerHTML = `<i class="${Xicon}"></i>`;
         element.setAttribute("id", playerSign);
         players.classList.add("active");
-    }}
+    }
+
+    element.style.pointerEvents = "none";
+}
+
+
+
+
+
