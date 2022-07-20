@@ -47,6 +47,9 @@ function clickedBox(element){
         element.setAttribute("id", playerSign);
     }
 
+    selectWinner();
+
+    playBoard.style.pointerEvents = "none";
     element.style.pointerEvents = "none";
     let delay = ((Math.random()*1000)+200).toFixed();
     setTimeout(()=>{
@@ -83,9 +86,33 @@ function bot(){
 
 
         }
+        selectWinner();
     
     }
-
+    playBoard.style.pointerEvents = "auto";
     boxes[randomBox].style.pointerEvents = "none";
+    playerSign = "X";
 
+}
+
+
+
+
+
+function getIdVal(idname){
+    return document.querySelector(".box" + idname).id;
+}
+
+function checkIdSign(vali1, vali2, vali3, sign){
+    if(getIdVal(vali1) == sign && getIdVal(vali2) == sign && getIdVal(vali3) == sign){
+        return true;
+    }
+}
+
+
+
+function selectWinner(){
+    if(checkIdSign(1,2,3,playerSign) || checkIdSign(4,5,6, playerSign) || checkIdSign(7,8,9, playerSign) || checkIdSign(1,4,7, playerSign) || checkIdSign(2,5,8, playerSign) || checkIdSign(3,6,9, playerSign) || checkIdSign(1,5,9, playerSign) || checkIdSign(3,5,7, playerSign)){
+        console.log(playerSign,"is winner");
+    }
 }
