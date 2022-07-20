@@ -23,15 +23,20 @@ window.onload = () => {
     selectOBtn.addEventListener("click", () => {
         selectBox.classList.add("hide");
         playBoard.classList.add("show");
-        players.setAttribute("class", "players active")
+        players.setAttribute("class", "players active player")
     });
 };
 
-let Xicon = "fa-solid fa-xmark";
-let Oicon = "fa-solid f-o";
-
+let Xicon = "fas fa-times",
+Oicon = "far fa-circle";
 function clickedBox(element){
-    if(){
-
-    }
-}
+    if(players.classList.contains("player")){
+        playerSign = "O";
+        element.innerHTML = `<i class="${Oicon}"></i>`;
+        players.classList.remove("active");
+        element.setAttribute("id", playerSign);
+    }else{
+        element.innerHTML = `<i class="${Xicon}"></i>`;
+        element.setAttribute("id", playerSign);
+        players.classList.add("active");
+    }}
