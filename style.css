@@ -11,7 +11,7 @@ body{
     background: #65a5f9;
 }
 
-.select-box, .play-board{
+.select-box, .play-board, .result-box{
     position: absolute;
     top: 50%;left: 50%;transform: translate(-50%,-50%);
 }
@@ -22,7 +22,7 @@ body{
     border-radius: 7px;
     max-width:330px;
     width: 100%;
-    display: none;
+    /* display: none; */
 }
 
 .select-box header{
@@ -59,8 +59,12 @@ body{
     transition: 0.2s ease-in-out;
 }
 
-.options button:hover{
+.options button:hover, .result-box .btn button:hover{
     transform: scale(0.95);
+}
+
+.play-board{
+    display: none;
 }
 
 .play-board .details{
@@ -126,3 +130,45 @@ body{
     color: #65a5f9;
 }
 
+
+.result-box{
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 7px;
+    max-width: 350px;
+    width: 100%;
+    display: none;
+
+}
+
+.result-box .won-text{
+    font-size: 25px;
+    font-weight:500;
+    display: flex;
+    justify-content: center;
+}
+
+.result-box .won-text p{
+    font-weight: 600;
+    margin: 0 5px;
+}
+
+.result-box .btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.result-box .btn button{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 5px 5px;
+    color: white;
+    background-color: cornflowerblue;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
