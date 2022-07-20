@@ -11,14 +11,18 @@ body{
     background: #65a5f9;
 }
 
-.select-box{
+.select-box, .play-board{
     position: absolute;
     top: 50%;left: 50%;transform: translate(-50%,-50%);
+}
+
+.select-box{
     background-color: aliceblue;
     padding: 25px 30px 30px;
     border-radius: 7px;
     max-width:330px;
     width: 100%;
+    display: none;
 }
 
 .select-box header{
@@ -57,5 +61,68 @@ body{
 
 .options button:hover{
     transform: scale(0.95);
+}
+
+.play-board .details{
+    background: aliceblue;
+    padding: 7px;
+    border-radius: 7px;
+}
+
+.play-board section{
+    display: flex;
+}
+
+.play-board .play-area{
+    margin-top: 20px;
+
+}
+.play-board .details .players{
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+}
+.play-board .details span{
+    width: 100%;
+    border-radius: 5px;
+    padding: 7px 0;
+    color: cornflowerblue;
+    font-size: 19px;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.details span:first-child{
+    color: aliceblue;
+}
+
+/* .play-board .details span.active{
+    color: whitesmoke;
+} */
+
+.details .slider{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-color:cornflowerblue;
+    z-index: 2;
+}
+
+.play-board section span{
+    display: block;
+    margin: 2px;
+    height: 80px;
+    width: 80px;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+    color: #65a5f9;
 }
 
