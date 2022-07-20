@@ -7,6 +7,8 @@ const playBoard = document.querySelector(".play-board");
 const boxes = document.querySelectorAll("section span");
 const players = document.querySelector(".players");
 const resultBox = document.querySelector(".result-box");
+const wonText = resultBox.querySelector(".won-text");
+const replayBtn = resultBox.querySelector("button");
 
 
 window.onload = () => {
@@ -120,5 +122,12 @@ function selectWinner(){
     if(checkIdSign(1,2,3,playerSign) || checkIdSign(4,5,6, playerSign) || checkIdSign(7,8,9, playerSign) || checkIdSign(1,4,7, playerSign) || checkIdSign(2,5,8, playerSign) || checkIdSign(3,6,9, playerSign) || checkIdSign(1,5,9, playerSign) || checkIdSign(3,5,7, playerSign)){
         runBot = false;
         bot(runBot);
+
+        setTimeout(()=> {
+            playBoard.classList.remove("show");
+            resultBox.classList.add("show");
+        },500);
+        wonText.innerHTML = `Player <p>${playerSign}</p> Won The Game!`;
+
     }
 }
